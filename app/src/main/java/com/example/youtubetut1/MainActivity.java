@@ -20,18 +20,30 @@ public class MainActivity extends AppCompatActivity {
         * them into strings */
         TextView tbUsername = findViewById(R.id.txtboxUtilizator);
         TextView tbPassword = findViewById(R.id.txtboxParola);
+        TextView lblError = findViewById(R.id.lblErrorTxt);
 
-        String username = tbUsername.getText().toString();
-        String password = tbPassword.getText().toString();
+        if (tbPassword.length() < 3 || tbUsername.length() < 3) {
+            lblError.setText("Numele sau parola trebuie sa contina minim 3 caractere!");
+            lblError.setVisibility(View.VISIBLE);
 
-        /* Clearing the text boxes */
-        tbUsername.setText("");
-        tbPassword.setText("");
-        tbUsername.clearFocus();
-        tbPassword.clearFocus();
+            /* Clearing the text boxes */
+            tbUsername.setText("");
+            tbPassword.setText("");
+            tbUsername.clearFocus();
+        }
+        else {
+            /* Clearing the text boxes */
+            tbUsername.setText("");
+            tbPassword.setText("");
+            tbUsername.clearFocus();
+            lblError.setVisibility(View.INVISIBLE);
 
-        /* Print them for debugging */
-        Log.d("LOGIN", "USERNAME: " + username);
-        Log.d("LOGIN", "PASSWORD: " + password);
+            String username = tbUsername.getText().toString();
+            String password = tbPassword.getText().toString();
+
+            /* Print them for debugging */
+            Log.d("LOGIN", "USERNAME: " + username);
+            Log.d("LOGIN", "PASSWORD: " + password);
+        }
     }
 }
