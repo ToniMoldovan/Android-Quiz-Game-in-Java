@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:onClick="onClickButton"
     tools:context=".ActivityLogin">
 
     <EditText
@@ -73,8 +72,8 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/custom_input_style"
         android:foreground="@drawable/custom_input_style"
-        android:onClick="onClickButton"
-        android:text="Button"
+        android:onClick="loginUser"
+        android:text="Autentificare"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,6 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginBottom="60dp"
+        android:onClick="startRegisterActivity"
         android:text="Nu ai cont? Inregistreaza-te!"
         android:textColor="#EDEDED"
         android:textStyle="bold"
